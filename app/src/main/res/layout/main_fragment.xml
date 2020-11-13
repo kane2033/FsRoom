@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/phonebook_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/contacts_header"
+            style="@style/item_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Список контактов"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/clearRecyclerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintBottom_toTopOf="@+id/contactsRecyclerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contactsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contacts_header"
+            tools:context=".fragments.CurrenciesListFragment"
+            tools:listitem="@layout/contacts_item" />
+
+        <Button
+            android:id="@+id/deleteAllButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Очистить БД"
+            app:layout_constraintEnd_toStartOf="@+id/getContactsFromDbButton"
+            app:layout_constraintTop_toBottomOf="@+id/getContactsButton" />
+
+        <Button
+            android:id="@+id/getContactsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Загрузить контакты"
+            app:layout_constraintEnd_toStartOf="@+id/saveContactsButton"
+            app:layout_constraintTop_toBottomOf="@+id/contactsRecyclerView" />
+
+        <Button
+            android:id="@+id/saveContactsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Сохранить в БД"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactsRecyclerView" />
+
+        <Button
+            android:id="@+id/getContactsFromDbButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Загрузить из БД"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/saveContactsButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
